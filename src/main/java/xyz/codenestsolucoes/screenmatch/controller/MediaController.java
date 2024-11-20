@@ -3,6 +3,7 @@ package xyz.codenestsolucoes.screenmatch.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import xyz.codenestsolucoes.screenmatch.model.MediaModel;
+import xyz.codenestsolucoes.screenmatch.model.SerieModel;
 import xyz.codenestsolucoes.screenmatch.service.MediaService;
 
 @Controller
@@ -13,5 +14,9 @@ public class MediaController {
 
     public MediaModel getMediaById(String imdbID) {
         return mediaService.getMediaById(imdbID);
+    }
+
+    public MediaModel getMediaByName(String name) {
+        return mediaService.getMediaByName(name);
     }
 }

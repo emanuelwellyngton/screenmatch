@@ -28,7 +28,8 @@ public class MenuView {
 
     @Command(command = "movie by-name")
     public void searchMovieByName(@Option String name) {
-        System.out.println(name);
+        MediaModel model = mediaController.getMediaByName(name.replace(" ", "+"));
+        showmediaDetails(model);
     }
 
     @Command(command = "serie by-id")
@@ -39,7 +40,8 @@ public class MenuView {
 
     @Command(command = "serie by-name")
     public void searchSerieByName(@Option String name) {
-
+        MediaModel model = mediaController.getMediaByName(name.replace(" ", "+"));
+        showmediaDetails(model);
     }
 
     public void showmediaDetails(MediaModel model) {

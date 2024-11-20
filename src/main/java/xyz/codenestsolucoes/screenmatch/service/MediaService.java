@@ -23,8 +23,18 @@ public class MediaService {
     public MediaModel getMediaById(String imdbID) {
         String url = baseURL + "&i=" + imdbID;
         String json= apiConsumer.getData(url);
-        MediaDTO mediaDTO = dataConverter.getData(json, MediaDTO.class);
+        MediaDTO dto = dataConverter.getData(json, MediaDTO.class);
+        return determineMediaType(dto);
+    }
 
+    public MediaModel getMediaByName(String name) {
+        String url = this.baseURL + "&t=" + name;
+        String json = this.apiConsumer.getData(url);
+        MediaDTO dto = this.dataConverter.getData(json, MediaDTO.class);
+        return determineMediaType(dto);
+    }
+
+    public MediaModel determineMediaType(MediaDTO mediaDTO) {
         if(Objects.equals(mediaDTO.tipo(), "movie")) {
             MovieModel model = new MovieModel(mediaDTO);
             return new MovieModel(mediaDTO);
