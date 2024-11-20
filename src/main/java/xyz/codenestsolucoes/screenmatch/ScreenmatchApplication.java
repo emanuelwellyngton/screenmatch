@@ -4,13 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.shell.command.annotation.CommandScan;
 import xyz.codenestsolucoes.screenmatch.controller.SerieController;
 
 @SpringBootApplication
+@CommandScan
 public class ScreenmatchApplication implements CommandLineRunner {
 
-	@Autowired
-	private SerieController serieController;
+//	@Autowired
+//	private SerieController serieController;
 
 	public static void main(String[] args)
 	{
@@ -19,6 +21,6 @@ public class ScreenmatchApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(serieController.loadSerieByID("tt0898266").getSeasons());
+//		System.out.println(serieController.loadSerieByID("tt0898266").getSeasons());
 	}
 }

@@ -4,7 +4,7 @@ public class EpisodeModel {
     private String title;
     private String released;
     private int number;
-    private boolean watched;
+    private Status status;
 
     public EpisodeModel(){}
 
@@ -22,14 +22,16 @@ public class EpisodeModel {
         return number;
     }
 
-    public boolean isWatched() {
+    public String getReleased() { return released; }
+
+    public Status getStatus() {
         //TODO implement controller to communication with db
-        return watched;
+        return status;
     }
 
-    public void setWatched(boolean watched) {
+    public void setStatus(Status status) {
         //TODO implement controller to communication with db
-        this.watched = watched;
+        this.status = status;
     }
 
     @Override
@@ -37,7 +39,7 @@ public class EpisodeModel {
         return "EpisodeModel{" +
                 "title='" + title + '\'' +
                 ", number=" + number +
-                ", watched=" + watched +
+                ", status=" + status +
                 '}';
     }
 }

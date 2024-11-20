@@ -11,9 +11,13 @@ public class SerieModel extends MediaModel {
     private List<SeasonModel> seasons;
 
     public SerieModel(MediaDTO mediaDTOdto, List<SeasonDTO> seasonsDTOS) {
-        super(mediaDTOdto);
-        this.totalSeasons = mediaDTOdto.quantTemporadas();
+        this(mediaDTOdto);
         this.seasons = loadSeasons(seasonsDTOS);
+    }
+
+    public SerieModel(MediaDTO mediaDTO) {
+        super(mediaDTO);
+        this.totalSeasons = mediaDTO.quantTemporadas();
     }
 
     public SerieModel(){

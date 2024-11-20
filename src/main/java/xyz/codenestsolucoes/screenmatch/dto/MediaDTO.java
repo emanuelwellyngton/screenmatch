@@ -7,7 +7,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public record MediaDTO(@JsonAlias("Title") String titulo,
                        @JsonAlias("imdbID") String id,
                        @JsonAlias("totalSeasons") int quantTemporadas,
-                       @JsonAlias("Plot") String plot,
+                       @JsonAlias("Plot") String sinopse,
                        @JsonAlias("Poster") String poster,
-                       @JsonAlias("Year") String ano){
+                       @JsonAlias("Year") String ano,
+                       @JsonAlias("Type") String tipo){
 }

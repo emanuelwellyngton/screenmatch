@@ -1,7 +1,6 @@
 package xyz.codenestsolucoes.screenmatch.model;
 
 import xyz.codenestsolucoes.screenmatch.dto.SeasonDTO;
-import xyz.codenestsolucoes.screenmatch.service.DataConverter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +8,7 @@ import java.util.List;
 public class SeasonModel {
     private List<EpisodeModel> episodes;
     private int number;
-    private boolean watched;
+    private Status status;
 
     public SeasonModel(){}
 
@@ -26,14 +25,14 @@ public class SeasonModel {
         return number;
     }
 
-    public boolean isWatched() {
+    public Status getStatus() {
         //TODO implement controller to communication with db
-        return watched;
+        return status;
     }
 
-    public void setWatched(boolean watched) {
+    public void setStatus(Status status) {
         //TODO implement controller to communication with db
-        this.watched = watched;
+        this.status = status;
     }
 
     public List<EpisodeModel> loadEpisodes(SeasonDTO dto) {
@@ -54,7 +53,7 @@ public class SeasonModel {
         return "SeasonModel{" +
                 "episodes=" + episodes +
                 ", number=" + number +
-                ", watched=" + watched +
+                ", status=" + status +
                 '}';
     }
 }
